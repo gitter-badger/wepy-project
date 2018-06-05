@@ -1,7 +1,12 @@
 <template lang="pug">
   view.choice-study-cntr 
     view.choice-list.f-clear.p-fixed
-      view.choice-item.f-left.t-center(wx:for="{{choiceList}}")  {{ item.title }}
+      view.choice-item.f-left.icon-wepy.t-center(
+        wx:for="{{choiceList}}", 
+        wx:key="{{index}}", 
+        class="{{ item.class }}")
+        image(src="../../assets/images/kaoyan.png" style="width: 80px; height:80px")
+        view.choice-title  {{ item.title }}
 </template>
 
 <script>
@@ -15,19 +20,23 @@ export default class Index extends wepy.page {
     choiceList: [
       {
         title: '选老师',
-        link: '/index'
+        link: '/index',
+        class: 'icon-kaoyan'
       },
       {
         title: '选课程',
-        link: '/detail'
+        link: '/detail',
+        class: 'icon-jisuanji'
       },
       {
-        title: '自选',
-        link: '/detail'
+        title: '注册老师',
+        link: '/detail',
+        class: 'icon-wangluoke'
       },
       {
-        title: '选课程',
-        link: '/detail'
+        title: '注册学生',
+        link: '/detail',
+        class: 'icon-zixi'
       }
     ]
   }
@@ -42,10 +51,12 @@ export default class Index extends wepy.page {
 </script>
 
 <style lang="stylus" scoped>
+
   .choice-study-cntr
     display block
     width 100%
     height 100%
+
     .choice-list
       top 50% 
       left 50%
@@ -53,13 +64,23 @@ export default class Index extends wepy.page {
       margin-top -224rpx
       margin-left -224rpx
       border 1rpx solid red
+
       .choice-item
         margin 12rpx
         width 200rpx 
         height 200rpx
         font-size 32rpx
-        line-height 120rpx
+        line-height 0
         border 1rpx solid #d8d8d8
         border-radius (@width/8)
+
+        .choice-title
+          margin 0 auto
+          width 80rpx 
+          height 80rpx
+
+        .choice-title
+          margin 12rpx auto 0
+          width 100%
 
 </style>
