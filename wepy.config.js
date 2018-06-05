@@ -27,6 +27,9 @@ module.exports = {
     stylus: {
       compress: true
     },
+    pug: {
+      pretty: true
+    },
     /*sass: {
       outputStyle: 'compressed'
     },*/

@@ -1,0 +1,65 @@
+<template lang="pug">
+  view.choice-study-cntr 
+    view.choice-list.f-clear.p-fixed
+      view.choice-item.f-left.t-center(wx:for="{{choiceList}}")  {{ item.title }}
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '选课啦'
+  }
+
+  data = {
+    choiceList: [
+      {
+        title: '选老师',
+        link: '/index'
+      },
+      {
+        title: '选课程',
+        link: '/detail'
+      },
+      {
+        title: '自选',
+        link: '/detail'
+      },
+      {
+        title: '选课程',
+        link: '/detail'
+      }
+    ]
+  }
+
+  onShareAppMessage (options) {
+    return {
+      title: '这是一个选课辅导小程序',
+      path: '/pages/index'
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  .choice-study-cntr
+    display block
+    width 100%
+    height 100%
+    .choice-list
+      top 50% 
+      left 50%
+      width 456rpx
+      margin-top -224rpx
+      margin-left -224rpx
+      border 1rpx solid red
+      .choice-item
+        margin 12rpx
+        width 200rpx 
+        height 200rpx
+        font-size 32rpx
+        line-height 120rpx
+        border 1rpx solid #d8d8d8
+        border-radius (@width/8)
+
+</style>
