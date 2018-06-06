@@ -5,7 +5,7 @@
         wx:for="{{choiceList}}", 
         wx:key="{{index}}", 
         class="{{ item.class }}")
-        image(src="../../assets/images/kaoyan.png" style="width: 80px; height:80px")
+        image.choice-icon(src="../../assets/images/{{item.class}}.svg")
         view.choice-title  {{ item.title }}
 </template>
 
@@ -21,22 +21,22 @@ export default class Index extends wepy.page {
       {
         title: '选老师',
         link: '/index',
-        class: 'icon-kaoyan'
+        class: 'kaoyan'
       },
       {
         title: '选课程',
         link: '/detail',
-        class: 'icon-jisuanji'
+        class: 'jisuanji'
       },
       {
         title: '注册老师',
         link: '/detail',
-        class: 'icon-wangluoke'
+        class: 'wangluoke'
       },
       {
         title: '注册学生',
         link: '/detail',
-        class: 'icon-zixi'
+        class: 'zixi'
       }
     ]
   }
@@ -63,7 +63,6 @@ export default class Index extends wepy.page {
       width 456rpx
       margin-top -224rpx
       margin-left -224rpx
-      border 1rpx solid red
 
       .choice-item
         margin 12rpx
@@ -74,7 +73,7 @@ export default class Index extends wepy.page {
         border 1rpx solid #d8d8d8
         border-radius (@width/8)
 
-        .choice-title
+        .choice-icon
           margin 0 auto
           width 80rpx 
           height 80rpx

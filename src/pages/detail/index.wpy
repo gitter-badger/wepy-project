@@ -1,0 +1,32 @@
+<template lang="pug">
+  view.user-info-cntr
+
+    view.user-info.f-clear
+      view.user-face.f-left
+        image(src="../../assets/images/shufu.svg")
+      view.user-info-list.f-left
+        view.user-name 
+        view.user-intro 
+
+    view.user-info-section
+      view.user-section-title 教学资历
+      view.user-section-info 10年
+
+    view.user-info-section
+      view.user-section-title 获得荣誉
+      view.user-section-info 全国高级优秀教师
+
+    view.user-info-section
+      view.user-section-title 老师课余时间
+      view.user-section-info 几节课
+      view.user-apply-btn 申请该老师的课
+
+</template>
+
+<script>
+// 老师的详细列表.
+</script>
+
+<style lang="stylus" scoped>
+
+</style>
