@@ -33,14 +33,26 @@ export default class extends wepy.app {
         {
           pagePath: 'pages/index/index',
           text: '首页',
-          iconPath: '',
-          selectedIconPath: ''
+          iconPath: 'assets/images/1.png',
+          selectedIconPath: 'assets/images/1.png'
+        },
+        {
+          pagePath: 'pages/teacher/index',
+          text: '老师',
+          iconPath: 'assets/images/1.png',
+          selectedIconPath: 'assets/images/1.png'
+        },
+        {
+          pagePath: 'pages/education-course/index',
+          text: '课程',
+          iconPath: 'assets/images/1.png',
+          selectedIconPath: 'assets/images/1.png'
         },
         {
           pagePath: 'pages/index',
           text: '我的',
-          iconPath: '',
-          selectedIconPath: ''
+          iconPath: 'assets/images/0.png',
+          selectedIconPath: 'assets/images/0.png'
         }
       ]
     }
