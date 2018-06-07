@@ -1,9 +1,15 @@
 <template lang="pug">
   view.course-list-cntr.f-left.w-100.t-center
-    view.course-item.w-100.dp-i-block(wx:for="{{ courseList }}" wx:key="{{idnex}}")
-      view.course-icon.m-auto 
-        image(src="../../assets/images/{{item.icon}}.svg")
-      view.couse-name.t-ceter {{ item.name }}
+
+    view.search-cntr.f-clear
+      view.choice-city.f-left 上海
+      view.search-check.f-right.t-center 搜索
+
+    view.cousr-list
+      view.course-item.w-100.dp-i-block(wx:for="{{ courseList }}" wx:key="{{idnex}}")
+        view.course-icon.m-auto 
+          image(src="../../assets/images/{{item.icon}}.svg")
+        view.couse-name.t-ceter {{ item.name }}
 </template>
 <script>
 import wepy from 'wepy'
@@ -19,24 +25,48 @@ export default class extends wepy.page {
         icon: 'shuxue',
         courseId: 1
       }, {
-        name: '语文课',
+        name: '板绘',
         icon: 'banhui',
         courseId: 1
       }, {
-        name: '语文课',
+        name: '管理',
         icon: 'guanli',
         courseId: 1
       }, {
-        name: '语文课',
+        name: '化学',
         icon: 'huaxue',
         courseId: 1
       }, {
-        name: '语文课',
+        name: '经济',
         icon: 'jingji',
         courseId: 1
       }, {
-        name: '语文课',
-        icon: 'jisuanji',
+        name: '美术',
+        icon: 'meishu',
+        courseId: 1
+      }, {
+        name: '历史',
+        icon: 'lishi',
+        courseId: 1
+      }, {
+        name: '兵兵球',
+        icon: 'binbangqiu',
+        courseId: 1
+      }, {
+        name: '电子技术',
+        icon: 'dianzijishu',
+        courseId: 1
+      }, {
+        name: '电商',
+        icon: 'dianshang',
+        courseId: 1
+      }, {
+        name: '创业',
+        icon: 'chuangye',
+        courseId: 1
+      }, {
+        name: '工程绘图',
+        icon: 'gongchenghuitu',
         courseId: 1
       }
     ]
@@ -52,7 +82,26 @@ export default class extends wepy.page {
 </script>
 
 <style lang="stylus" scoped>
-  .course-list-cntr
+  .course-list-cntr 
+    .search-cntr
+      height 80rpx 
+      background #eee
+      font-size 24rpx
+      .choice-city
+        margin-top 22rpx
+        width 120rpx 
+        height 36rpx 
+        line-height 36rpx
+      .search-check
+        margin-top 15rpx
+        margin-right 20rpx
+        width 500rpx
+        height 52rpx
+        line-height 56rpx
+        background #fff
+        border-radius 28rpx
+    .cousr-list
+      margin-top 20rpx 
     .course-item
       margin 24rpx 0 0 24rpx
       width 180rpx

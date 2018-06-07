@@ -68,18 +68,17 @@ export default class Index extends wepy.page {
         margin 12rpx
         width 200rpx 
         height 200rpx
-        font-size 32rpx
+        font-size 28rpx
         line-height 0
         border 1rpx solid #d8d8d8
         border-radius (@width/8)
 
         .choice-icon
-          margin 0 auto
-          width 80rpx 
-          height 80rpx
+          margin 20rpx auto
+          width 120rpx 
+          height 120rpx
 
         .choice-title
-          margin 12rpx auto 0
+          margin 10rpx auto 0
           width 100%
-
 </style>
