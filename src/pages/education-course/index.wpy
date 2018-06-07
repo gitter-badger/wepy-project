@@ -1,0 +1,74 @@
+<template lang="pug">
+  view.course-list-cntr.f-left.w-100.t-center
+    view.course-item.w-100.dp-i-block(wx:for="{{ courseList }}" wx:key="{{idnex}}")
+      view.course-icon.m-auto 
+        image(src="../../assets/images/{{item.icon}}.svg")
+      view.couse-name.t-ceter {{ item.name }}
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTitleText: '选课啦'
+  }
+
+  data = {
+    courseList: [
+      {
+        name: '语文课',
+        icon: 'shuxue',
+        courseId: 1
+      }, {
+        name: '语文课',
+        icon: 'banhui',
+        courseId: 1
+      }, {
+        name: '语文课',
+        icon: 'guanli',
+        courseId: 1
+      }, {
+        name: '语文课',
+        icon: 'huaxue',
+        courseId: 1
+      }, {
+        name: '语文课',
+        icon: 'jingji',
+        courseId: 1
+      }, {
+        name: '语文课',
+        icon: 'jisuanji',
+        courseId: 1
+      }
+    ]
+  }
+
+  onShareAppMessage (options) {
+    return {
+      title: '这是一个可以选择老师辅导小程序',
+      path: '/pages/index'
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  .course-list-cntr
+    .course-item
+      margin 24rpx 0 0 24rpx
+      width 180rpx
+      height 180rpx 
+      border 1rpx solid #999
+      border-radius 12rpx
+      background #eee
+      .course-icon
+        margin 20rpx auto 0
+        width 110rpx 
+        height 110rpx 
+        image 
+          width 100% 
+          height 100%
+      .couse-name
+        margin-top 6rpx
+        font-size 24rpx 
+        line-height 24rpx 
+</style>

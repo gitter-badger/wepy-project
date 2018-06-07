@@ -1,0 +1,133 @@
+<template lang="pug">
+  view.teacher-list.w-100.f-clear
+    view.teacher-item.w-100.f-left.f-clear.p-relative(wx:for="{{teacherList}}" wx:key="{{index}}")
+      view.teacher-photos.f-left
+        image(src="{{ item.avatar }}")
+      view.techer-info.f-left
+        view.teacher-name {{ item.name }}
+        view.teacher-intro 
+          view.intro-tag.dp-i-block(wx:for="{{item.tag}}" wx:key="{{index}}") {{ item }}
+      view.apply-study-btn.t-center 我要上课
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTitleText: '选老师啦'
+  }
+
+  data = {
+    teacherList: [
+      {
+        avatar: 'http://r.plures.net/no-avatar.jpg',
+        name: '卡卡',
+        tag: ['好老师', '三年工作经验', '好评'],
+        teacherId: '12212'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.png',
+        name: '蒙奇·D·路飞',
+        tag: ['探险', '超人系橡胶果实', '好评'],
+        teacherId: '122122'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.jpg',
+        name: '罗罗诺亚·索隆',
+        tag: ['睡觉', '喝酒', '修炼', '世界第一大剑豪'],
+        teacherId: '122123'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.png',
+        name: '娜美',
+        tag: ['橘子'],
+        teacherId: '122124'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.jpg',
+        name: '山治',
+        tag: ['下厨', '抽烟', '浪漫幻想'],
+        teacherId: '122125'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.png',
+        name: '娜美',
+        tag: ['橘子'],
+        teacherId: '122124'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.jpg',
+        name: '山治',
+        tag: ['下厨', '抽烟', '浪漫幻想'],
+        teacherId: '122125'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.png',
+        name: '娜美',
+        tag: ['橘子'],
+        teacherId: '122124'
+      },
+      {
+        avatar: 'http://r.plures.net/no-avatar.jpg',
+        name: '山治',
+        tag: ['下厨', '抽烟', '浪漫幻想'],
+        teacherId: '122125'
+      }
+    ]
+  }
+
+  onShareAppMessage (options) {
+    return {
+      title: '这是一个可以选择老师辅导小程序',
+      path: '/pages/index'
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  .teacher-list
+    padding-bottom 12rpx
+    .teacher-item
+      margin 10px auto 0
+      padding 12rpx 20rpx 
+      font-size 24rpx
+      line-height 24rpx
+      background #eee
+      box-sizing border-box
+      .teacher-photos
+        width 60px 
+        height 60px
+        border-radius 50%
+        overflow hidden
+        image 
+          width 100% 
+          height 100%
+      .techer-info
+        margin-left 20rpx
+        width auto 
+        .teacher-name
+          margin-top 12px
+          font-size 32rpx
+          color #333
+        .teacher-intro
+          margin-top 20rpx 
+          color #999
+          .intro-tag
+            margin-right 12rpx
+            padding 8rpx 12rpx 
+            background #eeeeee
+            border-radius 12px
+            border 1rpx solid #999 
+      .apply-study-btn
+        position absolute
+        top 50% 
+        right 20rpx 
+        margin-top -28rpx
+        width 120rpx 
+        height 56rpx
+        font-size 20rpx 
+        line-height 56rpx
+        color #fff
+        background #09bb07
+        border-radius 28rpx
+</style>
