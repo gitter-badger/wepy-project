@@ -1,5 +1,7 @@
 ### WePY项目的目录结构
 
+[![Join the chat at https://gitter.im/wepy-project/community](https://badges.gitter.im/wepy-project/community.svg)](https://gitter.im/wepy-project/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 ###### ├── dist                   小程序运行代码目录（该目录由WePY的build指令自动编译生成，请不要直接修改该目录下的文件）
 ###### ├── node_modules           
